@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar bg="primary" variant="dark" expand="lg">
+        <Container>
+          <Navbar.Brand href="/">
+            <img src={logo} className="logo" alt="Octofit Tracker Logo" />
+            Octofit Tracker
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/activities">Activities</Nav.Link>
+              <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
+              <Nav.Link href="/teams">Teams</Nav.Link>
+              <Nav.Link href="/users">Users</Nav.Link>
+              <Nav.Link href="/workouts">Workouts</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Container className="mt-4">
+        <h1 className="mb-4">Welcome to Octofit Tracker</h1>
+        {/* Add routing and component rendering here */}
+      </Container>
     </div>
   );
 }
 
-export default App;
